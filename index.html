@@ -1,46 +1,121 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Мой блог</title>
-  <link type="text/css" rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Мой блог — shiuhfduw.github.io</title>
   <style>
-    /* Стили для встроенного блока "Ключ 700" */
-    .key700-block {
-      font-family: Arial, sans-serif;
-      background-color: #e6f2ff;
+    /* Глобальные стили — всё белое на тёмном фоне */
+    body {
+      background: url('Icons/icons8.png') repeat;
+      background-color: #0f0c29;
+      color: #ffffff; /* Основной цвет текста — белый */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
       padding: 20px;
-      color: #003366;
-      margin: 20px 0;
-      border-radius: 8px;
+      line-height: 1.6;
     }
-    .key700-block h3 {
-      color: #0055aa;
-      margin-top: 0;
+
+    /* Контейнер */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.75);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+      color: #ffffff;
     }
-    .key700-info {
-      background-color: #ffffff;
+
+    /* Заголовки */
+    h1 {
+      text-align: center;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+    h2 {
+      color: #4dffcc;
+      border-bottom: 1px solid #444;
+      padding-bottom: 4px;
+      margin-top: 30px;
+    }
+    h3 {
+      color: #ff9966;
+      margin-top: 20px;
+    }
+
+    /* Изображения */
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin: 15px 0;
+      display: block;
+    }
+
+    /* Ссылки */
+    a {
+      color: #ff9966;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Код */
+    code {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      color: #ffffff;
+    }
+
+    /* Блок с ключом */
+    .key-info {
+      background: rgba(30, 30, 50, 0.6);
       padding: 15px;
+      border-left: 3px solid #4dffcc;
+      margin: 15px 0;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      max-width: 600px;
+      color: #ffffff;
     }
-    .key700-note {
+
+    /* Списки */
+    ul, ol {
+      color: #ffffff;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+
+    /* Примечания */
+    .note, p.note {
       font-style: italic;
-      color: #555;
+      color: #cccccc;
       margin-top: 10px;
     }
-    .key700-block code {
-      background: #f0f0f0;
-      padding: 2px 4px;
-      border-radius: 3px;
+
+    p {
+      color: #ffffff;
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Добро пожаловать в мой блог!</h1>
 
-<!-- =============== НОВАЯ ЗАПИСЬ: КЛЮЧ 700 =============== -->
+    <!-- ССЫЛКА НА ПОЧТУ -->
+    <p><a href="mailto:annaschegl24@gmail.com">📧 Напишите мне</a></p>
+
+    <!-- Картинка с fallback на случай ошибки -->
+    <img 
+      src="Icons/icons8.png" 
+      onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/0f0c29/ffffff?text=Изображение+недоступно';"
+      alt="Иконка фона"
+    >
+
+    <!-- =============== НОВАЯ ЗАПИСЬ: КЛЮЧ 700 =============== -->
     <h2>21 января, 2026</h2>
    <!-- RSA Учебный виджет -->
 <div id="rsa-demo-widget" style="font-family: Arial, sans-serif; max-width: 800px; margin: 30px auto; padding: 20px; background: #f9f9f9; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
@@ -80,7 +155,7 @@
     }
 
     window.runRSA = function() {
-      const input = document.getElementById('rsa-message');
+      constinput = document.getElementById('rsa-message');
       const output = document.getElementById('rsa-result');
       const m = parseInt(input.value, 10);
       const n = 55, e = 3, d = 27;
@@ -116,35 +191,51 @@
   Секреты шифруются сердцем ❤️<br>
   А расшифровываются — доверием 🔐
 </div>
-  
-<h2>3 декабря, 2025</h2>
-<img src="Icons/champagne-bottle.png" alt="Новый год">
-Поздравление с Наступающим 2026 годом читайте <a href="Congratulations2026.html">здесь</a>.
 
-<h2>15 октября, 2025</h2>
-<p>
-Я сделала Новогодние кроссворды для сайта <a href="http://адрес-сайта-друга" title="Блог моего друга">Сайт моего друга</a>.
-</p>
+    <!-- Предыдущая запись -->
+    <h2>17 января, 2026</h2>
+    <p><strong>Решение задания по шифру Цезаря</strong><br>
+    <strong>1. Определение ключей:</strong><br>
+    <code>2</code><br>
+    <code>28</code></p>
+    <p><strong>2. Расшифровка сообщений с неизвестным ключом k (0 &lt; k &lt; 32):</strong><br>
+    <code>ПРИВЕТ</code> (ключ = 5)<br>
+    <code>ВЕСНА</code> (ключ = 20)</p>
+    <p><strong>3. Зашифровка моей фамилии с ключом 10:</strong><br>
+    Моя фамилия: <code>Щеглова</code> → зашифрованная: <code>ГОМХЩЛЙ</code></p>
+    <p>✅ Все задания выполнены!</p>
 
-<h2>1 сентября, 2025</h2>
-<blockquote>Путешествие в тысячу миль начинается с одного шага (Лао Цзы)</blockquote>
-<p>
-Оставляю в прошлом скучную неинтересную локальную файловую систему ради Всемирной паутины.
-</p>
+    <!-- Домен -->
+    <h2>12 января, 2026</h2>
+    <h3>Доменное имя моего сайта: <code>shiuhfduw.github.io</code></h3>
+    <p><strong>Структура доменного имени по уровням иерархии:</strong></p>
+    <ul>
+      <li><strong>Уровень 1 (TLD — Top-Level Domain):</strong> <code>.io</code> —
+домен верхнего уровня, изначально принадлежавший Британской территории Индийского океана, сейчас широко используется в IT-сфере.</li>
+      <li><strong>Уровень 2 (Second-Level Domain):</strong> <code>github</code> — основной домен компании GitHub.</li>
+      <li><strong>Уровень 3 (Поддомен / Third-Level):</strong> <code>shiuhfduw</code> — мой уникальный логин на GitHub, который автоматически становится поддоменом при использовании GitHub Pages.</li>
+    </ul>
+    <p>Мой блог размещён бесплатно на платформе <strong>GitHub Pages</strong> и доступен по адресу:  
+    <a href="https://shiuhfduw.github.io" target="_blank">https://shiuhfduw.github.io</a>.</p>
+    <p>Название репозитория — <code>dem-github.jo</code> — является лишь именем проекта и <strong>не влияет на доменное имя</strong>.</p>
 
-<!-- 🔺 НОВАЯ ЗАПИСЬ ДЛЯ РОЖДЕСТВА 2026 🔺 -->
-<h2>15 декабря, 2025</h2>
-<p>
-🎄 <strong>Поздравляю с наступающим Рождеством 2026!</strong> 🎄<br>
-Пусть этот праздник принесёт вам мир, любовь и волшебство!
-</p>
-<p>
-🎥 Посмотрите праздничное видео: <a href="https://content-studio.sberdevices.ru/media/019b2192-02ae-76dd-8cb9-d20033721e25/019b219f-32fa-79f2-8f8b-fc6d481304b8.mp4#t=0.001" target="_blank">Рождественское видео</a><br>
-📄 Скачайте нашу колядку: <a href="kolyadka.odt" download>Колядка_Рождество.odt</a>
-</p>
+    <!-- Старые записи -->
+    <h2>15 декабря, 2025</h2>
+    <p><strong>Поздравляю с наступающим Рождеством 2026!</strong><br>
+    С теплом и радостью делюсь с вами традиционной колядкой.</p>
+    <p>Посмотрите праздничное видео: <a href="#">Видео с колядкой</a><br>
+    Скачайте документ с колядкой: <a href="kolyadka.pdf">kolyadka.pdf</a></p>
 
-<!-- Иконки -->
-<p>Иконки: <a target="_blank" href="https://icons8.com/icon/54109/champagne-bottle">Новый год</a> иконка от <a target="_blank" href="https://icons8.com">Icons8</a></p>
+    <h2>3 декабря, 2025</h2>
+    <p>Поздравление с Наступающим 2026 годом читайте <a href="Congratulations2026.html">здесь</a>.</p>
 
+    <h2>15 октября, 2025</h2>
+    <p>Я сделала Новогоднюю Сайт моего друга.</p>
+
+    <h2>1 сентября, 2025</h2>
+    <p><strong>Путешествие шаг за шагом (Лао Цзы)</strong><br>
+    ... продолжение текста ...</p>
+
+  </div>
 </body>
 </html>
