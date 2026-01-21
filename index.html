@@ -5,8 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Мой блог</title>
   <link type="text/css" rel="stylesheet" href="style.css" />
+  <style>
+    /* Стили для встроенного блока "Ключ 700" */
+    .key700-block {
+      font-family: Arial, sans-serif;
+      background-color: #e6f2ff;
+      padding: 20px;
+      color: #003366;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+    .key700-block h3 {
+      color: #0055aa;
+      margin-top: 0;
+    }
+    .key700-info {
+      background-color: #ffffff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      max-width: 600px;
+    }
+    .key700-note {
+      font-style: italic;
+      color: #555;
+      margin-top: 10px;
+    }
+    .key700-block code {
+      background: #f0f0f0;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+  </style>
 </head>
 <body>
+
+<h2>20 января, 2026</h2>
+<div class="key700-block">
+  <h3>Ключ: 700 (в десятичной системе)</h3>
+  <div class="key700-info">
+    <p>Исходный ключ: <strong>700</strong></p>
+    
+    <p>Для шифра Цезаря эффективный сдвиг определяется по модулю длины алфавита:</p>
+    
+    <ul>
+      <li><strong>Английский алфавит</strong> (26 букв):<br>
+          700 mod 26 = <strong>24</strong></li>
+      
+      <li><strong>Русский алфавит</strong> (33 буквы, без «ё»):<br>
+          700 mod 33 = <strong>7</strong></li>
+    </ul>
+
+    <p class="key700-note">Таким образом, при шифровании:
+      <br>— на английском используйте сдвиг <code>K = 24</code>,
+      <br>— на русском — сдвиг <code>K = 7</code>.</p>
+  </div>
+</div>
 
 <h2>3 декабря, 2025</h2>
 <img src="Icons/champagne-bottle.png" alt="Новый год">
@@ -14,7 +68,7 @@
 
 <h2>15 октября, 2025</h2>
 <p>
-Я сделала Новогодние кроссворды для сайта <a href="http://адрес-сайта-друга" title="Блог моего друга">Сайт моего друга</a>
+Я сделала Новогодние кроссворды для сайта <a href="http://адрес-сайта-друга" title="Блог моего друга">Сайт моего друга</a>.
 </p>
 
 <h2>1 сентября, 2025</h2>
@@ -34,7 +88,7 @@
 📄 Скачайте нашу колядку: <a href="kolyadka.odt" download>Колядка_Рождество.odt</a>
 </p>
 
-<!-- Иконки (оставляем как есть) -->
+<!-- Иконки -->
 <p>Иконки: <a target="_blank" href="https://icons8.com/icon/54109/champagne-bottle">Новый год</a> иконка от <a target="_blank" href="https://icons8.com">Icons8</a></p>
 
 </body>
