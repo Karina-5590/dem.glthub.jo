@@ -163,7 +163,7 @@
       <p><strong>Ответ:</strong> Наш стандартный срок доставки — <strong>3–5 рабочих дней</strong>. 📦</p>
     </div>
 
-    <!-- RSA Учебный виджет (ИСПРАВЛЕННЫЙ) -->
+    <!-- RSA Учебный виджет -->
     <h2>21 января, 2026</h2>
     <div id="rsa-demo-widget" class="widget">
       <h3>🔐 Учебный пример RSA</h3>
@@ -188,6 +188,7 @@
     <!-- Caesar Cipher Interactive -->
     <div class="widget">
       <h3>🔤 Шифр Цезаря — интерактив</h3>
+      <!-- ИЗМЕНЕНИЕ ЗДЕСЬ: Фамилия заменена на МАЛЬЦЕВА -->
       <p>Фамилия: <strong>МАЛЬЦЕВА</strong> | Ключ: <strong>10</strong></p>
       <p>Зашифровано: <strong id="encrypted-surname" style="color: #4dffcc;">Загрузка...</strong></p>
       
@@ -224,8 +225,9 @@
     <p>• ФХНЗКЧ → <code>ЦВЕТОК</code> (ключ = 7)</p>
     <p>• ЦЩЕБФ → <code>ШУБА</code> (ключ = 4)</p>
     
+    <!-- ИЗМЕНЕНИЕ ЗДЕСЬ: Фамилия заменена на МАЛЬЦЕВА -->
     <p><strong>3. Зашифровка фамилии с ключом 10:</strong><br>
-    <code>ХАЖБИЕВА</code> → <code id="surname-result">ЧЙЛТЛНЖК</code></p>
+    <code>МАЛЬЦЕВА</code> → <code id="surname-result">ФКХЭМОЛК</code></p>
     <p>✅ Все задания выполнены!</p>
 
     <!-- Домен -->
@@ -278,11 +280,11 @@
       // Инициализация RSA при загрузке
       if (document.getElementById('rsa-message')) runRSA();
       
-      // Инициализация Caesar
+      // Инициализация Caesar (теперь шифрует МАЛЬЦЕВА)
       encryptSurname();
     });
 
-    // ===== RSA Functions (ИСПРАВЛЕНО) =====
+    // ===== RSA Functions =====
     function modExp(base, exp, mod) {
       let result = 1;
       base = base % mod;
@@ -338,7 +340,8 @@
     }
 
     function encryptSurname() {
-      const surname = "ХАЖБИЕВА";
+      // ИЗМЕНЕНИЕ ЗДЕСЬ: Фамилия заменена на МАЛЬЦЕВА
+      const surname = "МАЛЬЦЕВА";
       const encrypted = caesarCipher(surname, 10);
       document.getElementById('encrypted-surname').textContent = encrypted;
       document.getElementById('surname-result').textContent = encrypted;
