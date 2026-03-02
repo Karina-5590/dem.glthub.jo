@@ -5,20 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Мой блог — shiuhfduw.github.io</title>
   <style>
-    /* Глобальные стили — всё белое на тёмном фоне */
+    /* Глобальные стили — тёмная тема */
     body {
       background: url('Icons/icons8.png') repeat;
       background-color: #0f0c29;
-      color: #ffffff; /* Основной цвет текста — белый */
+      color: #ffffff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 20px;
       line-height: 1.6;
     }
 
-    /* Контейнер */
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
       background: rgba(0, 0, 0, 0.75);
       padding: 25px;
@@ -27,7 +26,6 @@
       color: #ffffff;
     }
 
-    /* Заголовки */
     h1 {
       text-align: center;
       color: #ffcc00;
@@ -44,7 +42,6 @@
       margin-top: 20px;
     }
 
-    /* Изображения */
     img {
       max-width: 100%;
       height: auto;
@@ -53,7 +50,6 @@
       display: block;
     }
 
-    /* Ссылки */
     a {
       color: #ff9966;
       text-decoration: none;
@@ -62,7 +58,6 @@
       text-decoration: underline;
     }
 
-    /* Код */
     code {
       background: rgba(255, 255, 255, 0.15);
       padding: 2px 6px;
@@ -71,7 +66,6 @@
       color: #ffffff;
     }
 
-    /* Блок с ключом */
     .key-info {
       background: rgba(30, 30, 50, 0.6);
       padding: 15px;
@@ -81,63 +75,214 @@
       color: #ffffff;
     }
 
-    /* Списки */
-    ul, ol {
-      color: #ffffff;
-    }
-    li {
-      margin-bottom: 8px;
-    }
+    ul, ol { color: #ffffff; }
+    li { margin-bottom: 8px; }
+    .note { font-style: italic; color: #cccccc; margin-top: 10px; }
+    p { color: #ffffff; }
 
-    /* Примечания */
-    .note, p.note {
+    /* Виджеты */
+    .widget {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 15px;
+      border-radius: 10px;
+      margin: 15px 0;
+    }
+    .prediction-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+      border-bottom: 1px dashed rgba(255,255,255,0.2);
+    }
+    .prediction-item:last-child { border-bottom: none; }
+    .status-unexpected { color: #ff6b6b; }
+    .status-ok { color: #51cf66; }
+    
+    .magic-text {
+      text-align: center;
       font-style: italic;
-      color: #cccccc;
-      margin-top: 10px;
+      margin: 25px 0;
+      color: #e0e0ff;
+      font-size: 1.1em;
     }
-
-    p {
-      color: #ffffff;
+    
+    .date-badge {
+      display: inline-block;
+      background: rgba(77, 255, 204, 0.2);
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 0.9em;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Добро пожаловать в мой блог!</h1>
+    <h1>✨ Добро пожаловать в мой блог! ✨</h1>
+    
+    <p><a href="mailto:karinamaltseva0@gmail.com">📧 Напишите мне</a></p>
+    
+    <!-- Текущая дата -->
+    <p class="date-badge">📅 Сегодня: <span id="current-date">Загрузка...</span></p>
 
-    <!-- ССЫЛКА НА ПОЧТУ -->
-    <p><a href="karinamaltseva0@gmail.com">📧 Напишите мне</a></p>
-
-    <!-- Картинка с fallback на случай ошибки -->
+    <!-- Картинка с fallback -->
     <img 
       src="Icons/icons8.png" 
       onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/0f0c29/ffffff?text=Изображение+недоступно';"
-      alt="Иконка фона"
+      alt="Декоративная иконка"
     >
 
-    <!-- =============== НОВАЯ ЗАПИСЬ: КЛЮЧ 700 =============== -->
+    <!-- =============== НОВАЯ ЗАПИСЬ: RSA + Caesar + ML =============== -->
+    <h2>24 февраля, 2026</h2>
+    
+    <div class="widget">
+      <h3>🤖 Статус загрузки модели BERT</h3>
+      <p><code>Loading weights: 100% | 199/199 [00:00&lt;00:00, 2908.02it/s]</code></p>
+      <p><strong>Источник:</strong> DeepPavlov/rubert-base-cased</p>
+      <table style="width:100%; font-size:0.9em; border-collapse: collapse;">
+        <tr><th>Компонент</th><th>Статус</th></tr>
+        <tr><td>cls.seq_relationship.weight</td><td class="status-unexpected">UNEXPECTED</td></tr>
+        <tr><td>cls.predictions.transform.dense.weight</td><td class="status-unexpected">UNEXPECTED</td></tr>
+        <tr><td>bert.embeddings.position_ids</td><td class="status-unexpected">UNEXPECTED</td></tr>
+        <tr><td>cls.predictions.decoder.weight</td><td class="status-unexpected">UNEXPECTED</td></tr>
+      </table>
+      <p class="note">💡 UNEXPECTED: можно игнорировать при загрузке между разными архитектурами</p>
+    </div>
+
+    <div class="widget">
+      <h3>🔮 Топ-3 предсказания модели (демо)</h3>
+      <div class="prediction-item"><span>🐺 Alaskan tundra wolf</span><strong>48.99%</strong></div>
+      <div class="prediction-item"><span>🐕 Samoyed</span><strong>22.82%</strong></div>
+      <div class="prediction-item"><span>🦊 Dingo</span><strong>4.64%</strong></div>
+      <p class="note">Обновлено: 17.02.2026 | Модель: ResNet-50 (fine-tuned)</p>
+    </div>
+
+    <div class="widget">
+      <h3>🤖 FAQ-бот: ответ на вопрос</h3>
+      <p><strong>Вопрос:</strong> «Сколько ждать мой заказ?»</p>
+      <p><strong>Найденный FAQ:</strong> «Как быстро доставляется заказ?» (sim=0.706)</p>
+      <p><strong>Ответ:</strong> Наш стандартный срок доставки — <strong>3–5 рабочих дней</strong>. 📦</p>
+    </div>
+
+    <!-- RSA Учебный виджет (ИСПРАВЛЕННЫЙ) -->
     <h2>21 января, 2026</h2>
-   <!-- RSA Учебный виджет -->
-<div id="rsa-demo-widget" style="font-family: Arial, sans-serif; max-width: 800px; margin: 30px auto; padding: 20px; background: #f9f9f9; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-  <h2 style="color: #2c3e50; margin-top: 0;">🔐 Учебный пример RSA</h2>
-  
-  <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px; font-size: 14px;">
-    <p class="zz"><b>Ключи (на основе p=5, q=11):</b></p>
-    <p>Открытый: <code>(n=55, e=3)</code> | Закрытый: <code>(n=55, d=27)</code>
+    <div id="rsa-demo-widget" class="widget">
+      <h3>🔐 Учебный пример RSA</h3>
+      
+      <div style="background: rgba(255,255,255,0.1); padding: 12px; border-radius: 8px; margin-bottom: 15px;">
+        <p><b>Ключи (на основе p=5, q=11):</b></p>
+        <p>Открытый: <code>(n=55, e=3)</code> | Закрытый: <code>(n=55, d=27)</code></p>
+      </div>
+
+      <div>
+        <label for="rsa-message">Введите сообщение (целое число от 1 до 54):</label><br>
+        <input type="number" id="rsa-message" min="1" max="54" value="7" 
+               style="padding: 6px; margin: 5px 5px 10px 0; width: 120px; border-radius: 4px; border: none;">
+        <button onclick="runRSA()" style="padding: 6px 15px; background: #4dffcc; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">
+          Зашифровать и расшифровать
+        </button>
+      </div>
+
+      <div id="rsa-result" style="margin-top: 15px; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 6px; min-height: 24px;"></div>
+    </div>
+
+    <!-- Caesar Cipher Interactive -->
+    <div class="widget">
+      <h3>🔤 Шифр Цезаря — интерактив</h3>
+      <p>Фамилия: <strong>ХАЖБИЕВА</strong> | Ключ: <strong>10</strong></p>
+      <p>Зашифровано: <strong id="encrypted-surname" style="color: #4dffcc;">Загрузка...</strong></p>
+      
+      <div style="margin-top: 15px;">
+        <label for="caesar-input">Проверьте свой текст:</label><br>
+        <input type="text" id="caesar-input" placeholder="Введите текст на русском..." 
+               style="padding: 6px; width: 250px; margin: 5px 0; border-radius: 4px; border: none;">
+        <input type="number" id="caesar-shift" min="1" max="31" value="3" 
+               style="padding: 6px; width: 60px; margin: 5px 0; border-radius: 4px; border: none;">
+        <button onclick="runCaesar()" style="padding: 6px 12px; background: #ff9966; border: none; border-radius: 4px; cursor: pointer; color: white;">
+          Зашифровать
+        </button>
+        <p id="caesar-output" style="margin-top: 10px; font-weight: bold;"></p>
+      </div>
+    </div>
+
+    <!-- Красивая надпись -->
+    <div class="magic-text">
+      Секреты шифруются сердцем ❤️<br>
+      А расшифровываются — доверием 🔐
+    </div>
+
+    <!-- Предыдущая запись -->
+    <h2>17 января, 2026</h2>
+    <p><strong>Решение задания по шифру Цезаря</strong></p>
+    
+    <div class="key-info">
+      <p><strong>1. Определение ключей:</strong></p>
+      <p>• АПЕЛЬСИН → САЦЬНВЩЮ : ключ = <code>2</code></p>
+      <p>• АБРИКОС → ЫЬЛГЕЙМ : ключ = <code>30</code> (эквивалентно -2)</p>
+    </div>
+    
+    <p><strong>2. Расшифровка сообщений (0 &lt; k &lt; 32):</strong></p>
+    <p>• ФХНЗКЧ → <code>ЦВЕТОК</code> (ключ = 7)</p>
+    <p>• ЦЩЕБФ → <code>ШУБА</code> (ключ = 4)</p>
+    
+    <p><strong>3. Зашифровка фамилии с ключом 10:</strong><br>
+    <code>ХАЖБИЕВА</code> → <code id="surname-result">ЧЙЛТЛНЖК</code></p>
+    <p>✅ Все задания выполнены!</p>
+
+    <!-- Домен -->
+    <h2>12 января, 2026</h2>
+    <h3>Доменное имя моего сайта: <code>shiuhfduw.github.io</code></h3>
+    <p><strong>Структура доменного имени по уровням иерархии:</strong></p>
+    <ul>
+      <li><strong>Уровень 1 (TLD):</strong> <code>.io</code> — домен верхнего уровня, изначально Британская территория в Индийском океане, сейчас популярен в IT.</li>
+      <li><strong>Уровень 2:</strong> <code>github</code> — основной домен платформы GitHub.</li>
+      <li><strong>Уровень 3:</strong> <code>shiuhfduw</code> — мой уникальный логин, автоматически становится поддоменом в GitHub Pages.</li>
+    </ul>
+    <p>Блог размещён на <strong>GitHub Pages</strong>:  
+    <a href="https://shiuhfduw.github.io" target="_blank">https://shiuhfduw.github.io</a></p>
+    <p class="note">Название репозитория <code>dem-github.jo</code> — имя проекта, не влияет на домен.</p>
+
+    <!-- Старые записи -->
+    <h2>15 декабря, 2025</h2>
+    <p><strong>🎄 Поздравляю с наступающим Рождеством 2026!</strong><br>
+    С теплом и радостью делюсь традиционной колядкой.</p>
+    <p>🎥 <a href="#">Видео с колядкой</a> | 📄 <a href="kolyadka.pdf">Скачать kolyadka.pdf</a></p>
+
+    <h2>3 декабря, 2025</h2>
+    <p>Поздравление с Новым 2026 годом: 
+    <a href="Congratulations2026.html">Открыть поздравление</a> ✨</p>
+
+    <h2>15 октября, 2025</h2>
+    <p>🎁 Я создала Новогодние кроссворды для сайта друга: 
+    <a href="http://friend-site.example" title="Блог моего друга" target="_blank">Сайт моего друга</a></p>
+
+    <h2>1 сентября, 2025</h2>
+    <blockquote style="border-left: 3px solid #4dffcc; padding-left: 15px; font-style: italic; margin: 15px 0;">
+      «Путешествие в тысячу миль начинается с одного шага» — Лао Цзы
+    </blockquote>
+    <p>Оставляю в прошлом скучную локальную файловую систему ради Всемирной паутины. 🌐</p>
+    <p class="note">
+      ❄️ Иконка: <a target="_blank" href="https://icons8.com/icon/7518/snowflake">Новый год</a> 
+      от <a target="_blank" href="https://icons8.com">Icons8</a>
+    </p>
+
   </div>
 
-  <div>
-    <label for="rsa-message">Введите сообщение (целое число от 1 до 54):</label><br>
-    <input type="number" id="rsa-message" min="1" max="54" value="7" style="padding: 6px; margin: 5px 5px 10px 0; width: 100px;">
-    <button onclick="runRSA()">Зашифровать и расшифровать</button>
-  </div>
+  <!-- =============== СКРИПТЫ =============== -->
+  <script>
+    // ===== Отображение текущей даты =====
+    document.addEventListener('DOMContentLoaded', () => {
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      document.getElementById('current-date').textContent = now.toLocaleDateString('ru-RU', options);
+      
+      // Инициализация RSA при загрузке
+      if (document.getElementById('rsa-message')) runRSA();
+      
+      // Инициализация Caesar
+      encryptSurname();
+    });
 
-  <div id="rsa-result" style="margin-top: 15px; padding: 10px; background: white; border-radius: 6px; min-height: 20px;"></div>
-</div>
-
-<script>
-  // Только если функции ещё не определены — избегаем конфликтов
-  if (typeof window.runRSA === 'undefined') {
+    // ===== RSA Functions (ИСПРАВЛЕНО) =====
     function modExp(base, exp, mod) {
       let result = 1;
       base = base % mod;
@@ -149,93 +294,71 @@
       return result;
     }
 
-    function gcd(a, b) {
-      while (b !== 0) [a, b] = [b, a % b];
-      return a;
-    }
-
-    window.runRSA = function() {
-      constinput = document.getElementById('rsa-message');
+    function runRSA() {
+      const input = document.getElementById('rsa-message');
       const output = document.getElementById('rsa-result');
       const m = parseInt(input.value, 10);
       const n = 55, e = 3, d = 27;
 
-      if (isNaN(m)  m <= 0  m >= n) {
-        output.innerHTML = '<span style="color: #e74c3c;">Ошибка: введите число от 1 до 54.</span>';
+      if (isNaN(m) || m <= 0 || m >= n) {
+        output.innerHTML = '<span style="color: #ff6b6b;">❌ Ошибка: введите число от 1 до 54.</span>';
+        output.style.color = '#ff6b6b';
         return;
       }
 
       const C = modExp(m, e, n);
       const M = modExp(C, d, n);
 
-      let msg = <b>Исходное:</b> ${m} → <b>Шифротекст:</b> ${C} → <b>Расшифровка:</b> ${M};
+      let msg = `<b>Исходное:</b> ${m} → <b>Шифротекст:</b> ${C} → <b>Расшифровка:</b> ${M}`;
+      
       if (M === m) {
-        msg += ' ✅';
-        output.style.color = '#27ae60';
+        msg += ' ✅ Успешно!';
+        output.style.color = '#51cf66';
       } else {
-        msg += ' ❌ (ошибка — убедитесь, что НОД(m,55)=1)';
-        output.style.color = '#e74c3c';
+        msg += ' ❌ (проверьте: НОД(m,55)=1)';
+        output.style.color = '#ff6b6b';
       }
       output.innerHTML = msg;
-    };
+    }
 
-    // Запуск при загрузке виджета
-    document.addEventListener('DOMContentLoaded', () => {
-      if (document.getElementById('rsa-message')) runRSA();
-    });
-  }
-</script>
+    // ===== Caesar Cipher Functions =====
+    function caesarCipher(text, shift) {
+      const alphabet = 'АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ';
+      let result = '';
+      for (let char of text.toUpperCase()) {
+        const index = alphabet.indexOf(char);
+        if (index !== -1) {
+          const newIndex = (index + shift) % 32;
+          result += alphabet[newIndex];
+        } else {
+          result += char;
+        }
+      }
+      return result;
+    }
 
-<!-- Красивая надпись -->
-<div class="magic-text">
-  Секреты шифруются сердцем ❤️<br>
-  А расшифровываются — доверием 🔐
-</div>
+    function encryptSurname() {
+      const surname = "ХАЖБИЕВА";
+      const encrypted = caesarCipher(surname, 10);
+      document.getElementById('encrypted-surname').textContent = encrypted;
+      document.getElementById('surname-result').textContent = encrypted;
+    }
 
-    <!-- Предыдущая запись -->
-    <h2>17 января, 2026</h2>
-    <p><strong>Решение задания по шифру Цезаря</strong><br>
-    <strong>1. Определение ключей:</strong><br>
-    <code>2</code><br>
-    <code>28</code></p>
-    <p><strong>2. Расшифровка сообщений с неизвестным ключом k (0 &lt; k &lt; 32):</strong><br>
-    <code>ПРИВЕТ</code> (ключ = 5)<br>
-    <code>ВЕСНА</code> (ключ = 20)</p>
-    <p><strong>3. Зашифровка моей фамилии с ключом 10:</strong><br>
-    Моя фамилия: <code>Щеглова</code> → зашифрованная: <code>ГОМХЩЛЙ</code></p>
-    <p>✅ Все задания выполнены!</p>
-
-    <!-- Домен -->
-    <h2>12 января, 2026</h2>
-    <h3>Доменное имя моего сайта: <code>shiuhfduw.github.io</code></h3>
-    <p><strong>Структура доменного имени по уровням иерархии:</strong></p>
-    <ul>
-      <li><strong>Уровень 1 (TLD — Top-Level Domain):</strong> <code>.io</code> —
-домен верхнего уровня, изначально принадлежавший Британской территории Индийского океана, сейчас широко используется в IT-сфере.</li>
-      <li><strong>Уровень 2 (Second-Level Domain):</strong> <code>github</code> — основной домен компании GitHub.</li>
-      <li><strong>Уровень 3 (Поддомен / Third-Level):</strong> <code>shiuhfduw</code> — мой уникальный логин на GitHub, который автоматически становится поддоменом при использовании GitHub Pages.</li>
-    </ul>
-    <p>Мой блог размещён бесплатно на платформе <strong>GitHub Pages</strong> и доступен по адресу:  
-    <a href="https://shiuhfduw.github.io" target="_blank">https://shiuhfduw.github.io</a>.</p>
-    <p>Название репозитория — <code>dem-github.jo</code> — является лишь именем проекта и <strong>не влияет на доменное имя</strong>.</p>
-
-    <!-- Старые записи -->
-    <h2>15 декабря, 2025</h2>
-    <p><strong>Поздравляю с наступающим Рождеством 2026!</strong><br>
-    С теплом и радостью делюсь с вами традиционной колядкой.</p>
-    <p>Посмотрите праздничное видео: <a href="#">Видео с колядкой</a><br>
-    Скачайте документ с колядкой: <a href="kolyadka.pdf">kolyadka.pdf</a></p>
-
-    <h2>3 декабря, 2025</h2>
-    <p>Поздравление с Наступающим 2026 годом читайте <a href="Congratulations2026.html">здесь</a>.</p>
-
-    <h2>15 октября, 2025</h2>
-    <p>Я сделала Новогоднюю Сайт моего друга.</p>
-
-    <h2>1 сентября, 2025</h2>
-    <p><strong>Путешествие шаг за шагом (Лао Цзы)</strong><br>
-    ... продолжение текста ...</p>
-
-  </div>
+    function runCaesar() {
+      const text = document.getElementById('caesar-input').value;
+      const shift = parseInt(document.getElementById('caesar-shift').value) || 3;
+      const output = document.getElementById('caesar-output');
+      
+      if (!text.trim()) {
+        output.textContent = '⚠️ Введите текст для шифрования';
+        output.style.color = '#ffcc00';
+        return;
+      }
+      
+      const encrypted = caesarCipher(text, shift);
+      output.textContent = `🔐 Результат: ${encrypted}`;
+      output.style.color = '#4dffcc';
+    }
+  </script>
 </body>
 </html>
